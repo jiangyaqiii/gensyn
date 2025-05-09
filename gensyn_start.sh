@@ -7,15 +7,15 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-# 检查系统内存
-total_mem=$(free -g | awk '/^Mem:/{print $2}')
-if [ "$total_mem" -lt 16 ]; then
-  echo "错误: 系统内存小于16GB (当前: ${total_mem}GB)"
-  echo "请确保系统至少有16GB内存后再运行"
-  exit 1
-fi
+# # 检查系统内存
+# total_mem=$(free -g | awk '/^Mem:/{print $2}')
+# if [ "$total_mem" -lt 16 ]; then
+#   echo "错误: 系统内存小于16GB (当前: ${total_mem}GB)"
+#   echo "请确保系统至少有16GB内存后再运行"
+#   exit 1
+# fi
 
-echo "系统内存检查通过: ${total_mem}GB"
+# echo "系统内存检查通过: ${total_mem}GB"
 
 # 1. 更新系统包
 echo "正在更新系统包..."
